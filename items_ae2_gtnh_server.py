@@ -42,6 +42,8 @@ rows = execute_query(conn.table(supabase_table).select("*").filter(("datetime"),
 # Convert to DataFrame and Sort the table
 sort_table = pd.DataFrame.from_dict(rows.data).sort_values('datetime')
 
+st.image("assets/infinity_armor_3.png")
+
 # Chart for Item
 fig_col1, fig_col2 = st.columns([0.2, 0.8])
 with fig_col1:
