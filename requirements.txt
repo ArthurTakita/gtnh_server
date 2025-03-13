@@ -3,3 +3,4 @@ st-supabase-connection==2.0.1
 plotly_express==0.4.1
 pandas==2.2.3
 streamlit_autorefresh==1.0.1
+streamlit_image_select==0.6.0

@@ -7,6 +7,7 @@ import pandas as pd
 import datetime
 import time
 import pytz
+from streamlit_image_select import image_select
 
 
 st.set_page_config(
@@ -42,7 +43,9 @@ rows = execute_query(conn.table(supabase_table).select("*").filter(("datetime"),
 # Convert to DataFrame and Sort the table
 sort_table = pd.DataFrame.from_dict(rows.data).sort_values('datetime')
 
-st.image("assets/infinity_armor_3.png", width=100, output_format="PNG", caption="Avaritia Boots")
+img = image_select("Label", ["assets/infinity_armor_3.png", "assets/infinity_armor_0.png"])
+st.write(img)
+#st.image("assets/infinity_armor_3.png", width=100, output_format="PNG", caption="Avaritia Boots")
 
 # Chart for Item
 fig_col1, fig_col2 = st.columns([0.2, 0.8])
